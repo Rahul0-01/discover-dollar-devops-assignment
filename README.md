@@ -187,13 +187,16 @@ sudo docker compose -f docker-compose.prod.yml up -d
 
 ---
 
-## Screenshots (Placeholders)
+## Screenshots
 
-```
-docs/screenshots/github-actions.png
-docs/screenshots/docker-hub.png
-docs/screenshots/ui-banner.png
-```
+### 1. GitHub Actions CI/CD
+![GitHub Actions pipeline](docs/screenshots/github-actions.png)
+
+### 2. Docker Hub images
+![Docker Hub repositories](docs/screenshots/docker-hub.png)
+
+### 3. Live UI with custom banner
+![Live UI with banner](docs/screenshots/ui-banner.png)
 
 ---
 
