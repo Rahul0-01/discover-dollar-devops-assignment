@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    image: rahulchauhan7027/dd-backend:latest
+    container_name: backend
+    restart: unless-stopped
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/dd_db
+    depends_on:
+      - mongo
+
+  frontend:
+    image: rahulchauhan7027/dd-frontend:latest
+    container_name: frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:8081"
+
+volumes:
+  mongo_data:
